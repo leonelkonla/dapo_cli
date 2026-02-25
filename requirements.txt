@@ -1,0 +1,8 @@
+pandas
+faker
+typer
+rich
+sqlalchemy
+psycopg2-binary
+pytest
+typer
