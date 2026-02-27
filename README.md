@@ -94,7 +94,8 @@ Pro Quelle:
 
 DAPO_CLI/
 
-```github/workflows/     # CI Pipeline
+````
+github/workflows/     # CI Pipeline
 docs/                 # Forschungsquellen, Diagrammen, usw.  
 Outputs               # Outputs (Kommt nach dem ersten run...)  
 src/
@@ -108,11 +109,11 @@ src/
     main.py               # CLI-Orchestrierung  
 tests/                # Pytest Tests  
 requirements.txt  
-```README.md  
+README.md  
 
 Jedes Modul besitzt eine klar definierte Verantwortung.
 Die Pipeline ist bewusst flach und nachvollziehbar gehalten.
-
+````
 
 ## Installation
 
