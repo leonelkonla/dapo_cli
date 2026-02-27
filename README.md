@@ -93,23 +93,22 @@ Pro Quelle:
 ## Projektstruktur
 
 DAPO_CLI/
-│
-├── .github/workflows/        # CI Pipeline
-├── docs/                     # Forschungsquellen, Diagrammen, usw.
-├── Outputs                   # Outputs (Kommt nach dem ersten run...)
-├── src/
-│   ├── config.py             # Laufparameter
-│   ├── schemas.py            # Schema-Modelle
-│   ├── generator.py          # Clean Base Generation
-│   ├── pollution.py          # History + Fehler + Duplikate
-│   ├── etl.py                # Integration
-│   ├── quality.py            # Qualitätsmetriken
-│   ├── storage.py            # CSV / Postgres Persistierung
-│   └── main.py               # CLI-Orchestrierung
-│
-├── tests/                    # Pytest Tests
-├── requirements.txt
-└── README.md
+
+github/workflows/     # CI Pipeline
+docs/                 # Forschungsquellen, Diagrammen, usw.
+Outputs               # Outputs (Kommt nach dem ersten run...)
+src/
+    config.py             # Laufparameter
+    schemas.py            # Schema-Modelle
+    generator.py          # Clean Base Generation
+    pollution.py          # History + Fehler + Duplikate
+    etl.py                # Integration
+    quality.py            # Qualitätsmetriken
+    storage.py            # CSV / Postgres Persistierung
+    main.py               # CLI-Orchestrierung
+tests/                # Pytest Tests
+requirements.txt
+README.md
 
 Jedes Modul besitzt eine klar definierte Verantwortung.
 Die Pipeline ist bewusst flach und nachvollziehbar gehalten.
@@ -215,12 +214,6 @@ Die Umsetzung orientiert sich am konzeptionellen Rahmen von:
 Panse, F.; Wingerath, W.; Wollmer, B.
 Towards Scalable Generation of Realistic Test Data for Duplicate Detection.
 
-## Autor
-
-Leonel Konla Kamta
-Bachelorstudium Medieninformatik
-Technische Hochschule Brandenburg
-
-## LICENSE
+### LICENSE
 
 Copyright (c) 2026 Leonel Konla - All rights reserved. This repository is publicly visible for viewing purposes only.
