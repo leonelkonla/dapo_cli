@@ -2,7 +2,7 @@
 
 Schema-getriebenes CLI-Tool zur Generierung synthetischer Multi-Source-Testdaten nach dem DaPo⁺-Prinzip
 
-Version 1.2
+Version 1.3
 Projektkontext: Bachelorarbeit – Medieninformatik
 
 ## Überblick
