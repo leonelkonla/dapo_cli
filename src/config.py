@@ -8,7 +8,7 @@ class GenerationConfig:
     rows: int
     n_sources: int = 3
 
-    # DaPo+-like knobs (high-level)
+    # DaPo+
     duplicate_rate: float = 0.10
     missing_rate: float = 0.03
     typo_rate: float = 0.03

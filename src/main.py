@@ -14,7 +14,7 @@ from .etl import integrate_sources, normalize_strings, fill_nulls
 from .quality import compute_quality_metrics
 from .storage import save_csv_bundle, save_postgres_bundle
 
-app = typer.Typer(help="DaPo+-like synthetic test data generator (minimal, smart wizard).")
+app = typer.Typer(help="DaPo+-like synthetic test data generator.")
 
 
 def _run_id() -> str:
@@ -30,19 +30,19 @@ def run(
     rows: int = typer.Option(1000, help="Number of base entities"),
     sources: int = typer.Option(3, help="Number of heterogeneous sources"),
     out_dir: str = typer.Option("outputs", help="Output root folder"),
-    store: str = typer.Option("csv", help="csv | postgres"),
+    store: str = typer.Option("csv", help="csv | postgres | both"),
     pg_dsn: str = typer.Option("", help="Postgres DSN if store=postgres"),
     seed: int = typer.Option(42, help="Seed"),
 ):
-    print("[bold]DaPo CLI (minimal)[/bold]")
+    print("[bold]DaPo CLI[/bold]")
 
     domain = _ask(
         "In welcher Branche / welchem Kontext bist du aktiv?",
-        "E-Commerce / Banking / HR / Health / Logistik / Medien",
+        "E-Commerce / Banking / HR / Health / Logistik / Medien/ etc.",
     )
     entity = _ask(
         "Welche Art Daten willst du generieren (Entität)?",
-        "orders / transactions / applications / shipments / videos",
+        "orders / transactions / applications / shipments / videos/ etc.",
     )
 
     print("Welche Felder brauchst du? (kommagetrennt)")
@@ -121,6 +121,18 @@ def run(
             raise typer.BadParameter("pg_dsn is required when store=postgres")
         save_postgres_bundle(pg_dsn, srcs, integrated, gold, quality_df)
         print("[bold green]Done[/bold green] -> Postgres tables created")
+        return
+    
+    if store == "both":
+        # 1) always write CSV bundle
+        save_csv_bundle(run_folder, srcs, integrated, gold, quality_df)
+
+        # 2) also write to postgres
+        if not pg_dsn:
+            raise typer.BadParameter("pg_dsn is required when store=both")
+        save_postgres_bundle(pg_dsn, srcs, integrated, gold, quality_df)
+
+        print(f"[bold green]Done[/bold green] -> CSV: {run_folder} | Postgres: tables created")
         return
 
     raise typer.BadParameter("store must be csv or postgres")

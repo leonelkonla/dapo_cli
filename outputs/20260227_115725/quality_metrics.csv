@@ -1,0 +1,4 @@
+source,rows,columns,missing_rate,duplicate_rate
+S1,2200,7,0.0236,0.1145
+S2,2200,7,0.0297,0.0
+S3,2200,7,0.0262,0.1159
