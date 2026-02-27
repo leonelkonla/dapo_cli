@@ -94,7 +94,7 @@ Pro Quelle:
 
 DAPO_CLI/
 
-````
+`
 github/workflows/     # CI Pipeline  
 docs/                 # Forschungsquellen, Diagrammen, usw.  
 Outputs               # Outputs (Kommt nach dem ersten run...)  
@@ -110,10 +110,10 @@ src/
 tests/                # Pytest Tests  
 requirements.txt  
 README.md  
-
+`
 Jedes Modul besitzt eine klar definierte Verantwortung.
 Die Pipeline ist bewusst flach und nachvollziehbar gehalten.
-```
+
 ## Installation
 
 1. Virtuelle Umgebung erstellen
