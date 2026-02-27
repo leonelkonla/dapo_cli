@@ -112,7 +112,7 @@ requirements.txt
 README.md  
 
 Jedes Modul besitzt eine klar definierte Verantwortung.
-Die Pipeline ist bewusst flach und nachvollziehbar gehalten.
+Die Pipeline ist bewusst flach und nachvollziehbar gehalten. ```
 
 ## Installation
 
